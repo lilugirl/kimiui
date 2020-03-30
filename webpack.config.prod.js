@@ -1,4 +1,6 @@
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var CopyWebpackPlugin = require("copy-webpack-plugin");
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 var path = require("path");
@@ -18,6 +20,20 @@ module.exports = {
       template: "src/index.html",
       filename: "index.html",
       chunks: ["main"]
+    }),
+
+    new CopyWebpackPlugin([
+      {
+        from: "./src/images",
+        to: "images"
+      },
+      {
+        from: "./src/css",
+        to: "css"
+      }
+    ]),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].css"
     }),
     new CleanWebpackPlugin()
   ],
@@ -43,10 +59,15 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },
-
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.(eot|ttf|svg)$/,

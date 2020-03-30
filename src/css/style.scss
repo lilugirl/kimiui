@@ -1,5 +1,91 @@
+$primary-color:#2A49CA;
+$black1:rgba(0,0,0,0.85);  // Title
+$black2:rgba(0,0,0,0.65); // Primary text
+$black3:rgba(0,0,0,0.45); // Secondary text
+$black4:rgba(0,0,0,0.25); // Disable
+$black5:rgba(0,0,0,0.15); // Border
+$black6:rgba(0,0,0,0.9); // Dividers
+$black7:rgba(0,0,0,0.04); // Background
+$black8:rgba(0,0,0,0.02); // Table header
+
 body{
-    h3{
-        background-color: yellow;
-    }
+    background-color: $black7;
+    color:$black2;
+    font-size:14px;
+    font-weight: 400;
+}
+
+
+/***字体**/
+.km-font1{
+    font-size:12px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.km-font2{
+    font-size:14px;
+    line-height:22px;
+    font-weight: 400;
+}
+
+.km-font3{
+    font-size:16px;
+    line-height:24px;
+    font-weight:500;
+}
+
+.km-font4{
+    font-size:20px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+
+/**LAYOUT**/
+
+.km-layout{
+    box-sizing:border-box;
+}
+
+
+.km-layout-header{
+    height: 64px;
+    padding: 0 64px;
+    line-height:64px;
+    background:$primary-color;
+    color:#fff;
+    box-shadow: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05);
+}
+
+.km-layout-content{
+    padding: 0 64px;
+    margin:24px 0;
+    min-height:120px;
+    line-height:120px;
+    height:100%;
+
+}
+
+.km-layout-footer{
+    padding:24px 50px;
+    font-size:14px;
+    text-align: center;
+    color:$black3;
+}
+
+
+/**HEAD**/
+.km-logo{
+    width:120px;
+    height:31px;
+    background-color: hsla(0,0,0,0.2);
+    margin:16px 24px 16px 0;
+    float:left;
+}
+
+.km-sitename{ 
+    color:#fff;
+    margin:18px 0;
+    float:left;
 }
